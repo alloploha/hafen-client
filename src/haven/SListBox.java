@@ -57,7 +57,6 @@ public abstract class SListBox<I, W extends Widget> extends SListWidget<I, W> im
     public int scrollval() {return(cury);}
     public void scrollval(int val) {cury = val;}
 
-    @SuppressWarnings("unchecked")
     public void update() {
 	boolean reset = this.reset;
 	this.reset = false;
@@ -93,6 +92,7 @@ public abstract class SListBox<I, W extends Widget> extends SListWidget<I, W> im
 	    }
 	}
 	if(update) {
+		@SuppressWarnings("unchecked")
 	    I[] newi = (I[])new Object[h];
 	    Map<I, W> neww = new IdentityHashMap<>();
 	    Coord itemsz = Coord.of(itemw, itemh);
