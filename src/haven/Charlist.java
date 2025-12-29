@@ -268,15 +268,15 @@ public class Charlist extends Widget {
     }
 
     public boolean keydown(KeyDownEvent ev) {
-	if(ev.code == ev.awt.VK_UP) {
+	if(ev.code == KeyEvent.VK_UP) {
 	    if(!chars.isEmpty())
 		list.change(chars.get(Math.max(chars.indexOf(list.sel) - 1, 0)));
 	    return(true);
-	} else if(ev.code == ev.awt.VK_DOWN) {
+	} else if(ev.code == KeyEvent.VK_DOWN) {
 	    if(!chars.isEmpty())
 		list.change(chars.get(Math.min(chars.indexOf(list.sel) + 1, chars.size() - 1)));
 	    return(true);
-	} else if(ev.code == ev.awt.VK_ENTER) {
+	} else if(ev.code == KeyEvent.VK_ENTER) {
 	    if(list.sel != null)
 		wdgmsg("play", list.sel.name);
 	    return(true);
